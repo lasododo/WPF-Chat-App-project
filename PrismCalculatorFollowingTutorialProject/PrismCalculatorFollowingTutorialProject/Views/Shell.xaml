@@ -1,0 +1,32 @@
+﻿<Window x:Class="PrismCalculatorFollowingTutorialProject.Shell"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PrismCalculatorFollowingTutorialProject"
+        mc:Ignorable="d"
+        x:Name="AppWindow"
+        xmlns:prism="http://prismlibrary.com/"
+        prism:ViewModelLocator.AutoWireViewModel="True" 
+        Title="{Binding Title}" Height="600" Width="900">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="MinWidth" Value="50"></Setter>
+            <Setter Property="MinHeight" Value="50"></Setter>
+            <Setter Property="Margin" Value="5"></Setter>
+        </Style>
+
+        <Style TargetType="TextBox">
+            <Setter Property="Margin" Value="5"></Setter>
+            <Setter Property="Height" Value="50"></Setter>
+        </Style>
+    </Window.Resources>
+
+    <Grid Background="White">
+        <Frame x:Name="MainFrame" 
+               NavigationUIVisibility="Hidden"
+               Content="{Binding ApplicationViewModel.CurrentPage, Source={x:Static local:ViewModelLocator.Instance}, Converter={local:ApplicationPageValueConverter}}" 
+               />
+    </Grid>
+    
+</Window>

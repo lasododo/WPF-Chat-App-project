@@ -29,7 +29,6 @@ namespace PrismCalculatorFollowingTutorialProject
             // TextBoxer.Text
             if (TupleDataClass.OMightyDict.TryGetValue(TupleDataClass.CurrentlySelected.ID, out var x))
             {
-                MessageBox.Show(x.Capacity.ToString());
                 x.Add(new ThreadItemViewModel
                 {
                     SendersName = "ME",
@@ -38,7 +37,6 @@ namespace PrismCalculatorFollowingTutorialProject
                     Message = TextBoxer.Text,
                     SentByMe = true
                 });
-                MessageBox.Show(x.Capacity.ToString());
                 TupleDataClass.OMightyDict[TupleDataClass.CurrentlySelected.ID] = x;
             }
             else
